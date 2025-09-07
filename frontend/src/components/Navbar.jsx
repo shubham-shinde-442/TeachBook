@@ -10,7 +10,7 @@ const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/user/student/logout`, { withCredentials: true })
+    await axios.get(`${process.env.VITE_BACKEND_URL}/api/v1/user/student/logout`, { withCredentials: true })
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);

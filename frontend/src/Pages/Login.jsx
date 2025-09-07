@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await axios
-        .post(`${process.env.REACT_APP_API_URL}/api/v1/user/login`, { email, password, role: "Student" },
+        .post(`${process.env.VITE_BACKEND_URL}/api/v1/user/login`, { email, password, role: "Student" },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },

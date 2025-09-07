@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/user/login`,
+        `${process.env.VITE_BACKEND_URL}/api/v1/user/login`,
         { email, password, role },
         {
           withCredentials: true,
@@ -37,7 +37,7 @@ const Login = () => {
         else if (role === "Teacher") userDetailsUrl = "/api/v1/user/teacher/me";
 
         const userResponse = await axios.get(
-          `${process.env.REACT_APP_API_URL}${userDetailsUrl}`,
+          `${process.env.VITE_BACKEND_URL}${userDetailsUrl}`,
           { withCredentials: true }
         );
 
