@@ -53,7 +53,7 @@ const AddNewTeacher = () => {
       formData.append("teacherDepartment", teacherDepartment);
       formData.append("teacherAvatar", teacherAvatar);
       await axios
-        .post(`${process.env.VITE_BACKEND_URL}/api/v1/user/teacher/addnew`, formData, {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/teacher/addnew`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

@@ -12,9 +12,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        let url = `${process.env.VITE_BACKEND_URL}/api/v1/appointment/getall`;
+        let url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/getall`;
         if (userRole === "Teacher") {
-          url = `${process.env.VITE_BACKEND_URL}/api/v1/appointment/teacher/my`;
+          url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/teacher/my`;
         }
         const { data } = await axios.get(url, { withCredentials: true });
         setAppointments(data.appointments || []);
@@ -35,7 +35,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `${process.env.VITE_BACKEND_URL}/api/v1/appointment/update/${appointmentId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

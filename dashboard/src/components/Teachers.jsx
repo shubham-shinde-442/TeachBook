@@ -10,7 +10,7 @@ const Teachers = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const { data } = await axios.get(`${process.env.VITE_BACKEND_URL}/api/v1/user/teachers`, { withCredentials: true });
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/teachers`, { withCredentials: true });
         setTeachers(data.teachers);
       } catch (error) {
         toast.error(error.response.data.message);

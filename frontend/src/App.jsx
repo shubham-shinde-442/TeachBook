@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`${process.env.VITE_BACKEND_URL}/api/v1/user/student/me`, 
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/student/me`, 
           {
             withCredentials: true,
           }

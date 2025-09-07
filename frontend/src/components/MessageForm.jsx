@@ -13,7 +13,7 @@ const MessageForm = () => {
     e.preventDefault();
     try {
       await axios
-        .post(`${process.env.VITE_BACKEND_URL}/api/v1/message/send`, { firstName, lastName, email, phone, message },
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/message/send`, { firstName, lastName, email, phone, message },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },

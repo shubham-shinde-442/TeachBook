@@ -26,7 +26,7 @@ const App = () => {
         if (userRole === "Admin") url = "/api/v1/user/admin/me";
         else if (userRole === "Teacher") url = "/api/v1/user/teacher/me";
 
-        const response = await axios.get(`${process.env.VITE_BACKEND_URL}${url}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}${url}`, {
           withCredentials: true,
         });
 

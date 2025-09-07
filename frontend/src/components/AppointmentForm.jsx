@@ -29,7 +29,7 @@ const AppointmentForm = () => {
   const [teachers, setTeachers] = useState([]);
   useEffect(() => {
     const fetchTeachers = async () => {
-      const { data } = await axios.get(`${process.env.VITE_BACKEND_URL}/api/v1/user/teachers`, { withCredentials: true });
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/teachers`, { withCredentials: true });
       setTeachers(data.teachers);
       console.log(data.teachers);
     };
@@ -38,7 +38,7 @@ const AppointmentForm = () => {
   const handleAppointment = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`${process.env.VITE_BACKEND_URL}/api/v1/appointment/post`, {
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/post`, {
           firstName,
           lastName,
           email,
