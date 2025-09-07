@@ -7,10 +7,7 @@ const MyAppointments = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/my",
-          { withCredentials: true }
-        );
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/appointment/my`, { withCredentials: true });
         setAppointments(data.appointments);
       } catch (error) {
         console.error(

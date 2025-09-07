@@ -12,9 +12,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        let url = "http://localhost:4000/api/v1/appointment/getall";
+        let url = `${process.env.REACT_APP_API_URL}/api/v1/appointment/getall`;
         if (userRole === "Teacher") {
-          url = "http://localhost:4000/api/v1/appointment/teacher/my";
+          url = `${process.env.REACT_APP_API_URL}/api/v1/appointment/teacher/my`;
         }
         const { data } = await axios.get(url, { withCredentials: true });
         setAppointments(data.appointments || []);
@@ -35,7 +35,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `${process.env.REACT_APP_API_URL}/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

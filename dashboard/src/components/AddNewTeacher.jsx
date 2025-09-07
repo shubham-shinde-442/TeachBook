@@ -53,7 +53,7 @@ const AddNewTeacher = () => {
       formData.append("teacherDepartment", teacherDepartment);
       formData.append("teacherAvatar", teacherAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/teacher/addnew", formData, {
+        .post(`${process.env.REACT_APP_API_URL}/api/v1/user/teacher/addnew`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

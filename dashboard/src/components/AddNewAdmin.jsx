@@ -21,9 +21,7 @@ const AddNewAdmin = () => {
     e.preventDefault();
     try {
       await axios
-        .post(
-          "http://localhost:4000/api/v1/user/admin/addnew",
-          { firstName, lastName, email, phone, dob, gender, password },
+        .post(`${process.env.REACT_APP_API_URL}/api/v1/user/admin/addnew`, { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },

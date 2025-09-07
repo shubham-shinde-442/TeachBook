@@ -13,9 +13,7 @@ const MessageForm = () => {
     e.preventDefault();
     try {
       await axios
-        .post(
-          "http://localhost:4000/api/v1/message/send",
-          { firstName, lastName, email, phone, message },
+        .post(`${process.env.REACT_APP_API_URL}/api/v1/message/send`, { firstName, lastName, email, phone, message },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
